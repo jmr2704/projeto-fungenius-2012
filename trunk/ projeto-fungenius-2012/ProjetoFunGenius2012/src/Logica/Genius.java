@@ -22,20 +22,28 @@ public interface Genius {
 	public int getApontador();
 
 	/**
+	 * 
+	 * @param entradaJogador
+	 * @return
+	 
+	 */
+	
+	/**
 	 * Verifica se o parametro entradaJogador corresponde ao proximo valor da sequencia
 	 * @param entradaJogador
 	 * @return true se o parametro entradaJogador corresponder ao valor da sequencia,
-	 * 			false caso contrario. 
+	 * 			false caso contrario.
+	 * * @throws Exception - excecao lancada devido a sequencia estar vazia 
 	 */
 	
-	public boolean verificaEntrada(String entradaJogador);
+	public boolean verificaEntrada(String entradaJogador) throws Exception;
 	
 	/**
-	 * Gera um proximo valor randomicamento para a sequencia
-	 * @return
+	 * Adiciona um novo elemento randomicamente na sequencia
+	 * 
 	 */
 	
-	public String gerarValor();
+	public void aumentarSequencia();
 	
 	
 
