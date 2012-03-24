@@ -7,7 +7,48 @@ import java.util.*;
  *
  */
 
-public class Classico {
+public class Classico implements Genius{
+	
+	private String sequencia;
+	private int apontador;
+	private Random geradorAleatorio;
+	
+	public Classico(){
+		this.sequencia = "";
+		this.apontador = -1;
+	}
+
+	@Override
+	public String getSequencia() {
+		return this.sequencia;
+	}
+
+	@Override
+	public int getApontador() {
+		return this.apontador;
+	}
+
+	@Override
+	public boolean verificaEntrada(String entradaJogador) throws Exception {
+		if(apontador == -1){
+			throw new Exception("Sequencia vazia");
+		}else{
+			if(this.sequencia.valueOf(this.apontador) == entradaJogador){
+				return true;
+			}
+			return false;
+		}
+	}
+
+	@Override
+	public void aumentarSequencia() {
+		this.sequencia = this.sequencia + this.geradorAleatorio.nextInt(4);
+	}
+	
+}
+
+	
+/*
     public static Random gerador;
     public static String sequenciaCorreta;
     public static Scanner sc;
@@ -69,4 +110,4 @@ public class Classico {
     
     
 
-}
+}*/
