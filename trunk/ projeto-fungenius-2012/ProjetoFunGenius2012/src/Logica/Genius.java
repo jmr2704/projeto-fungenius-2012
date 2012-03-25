@@ -45,27 +45,29 @@ public class Genius {
 	 * 			false caso contrario.
 	 * * @throws Exception - excecao lancada devido a sequencia estar vazia 
 	 */
-	
+
 	public boolean verificaEntrada(String entradaJogador) throws Exception{
 		if(apontador == -1){
 			throw new Exception("Sequencia vazia");
 		}else{
 			if(this.sequencia.substring(this.sequencia.length() -1).equals(entradaJogador)){
-				this.apontador += (-1);
+				this.apontador += (1);
 				return true;
 			}
 			return false;
 		}
 	}
 	
+
 	/**
 	 * Adiciona um novo elemento randomicamente na sequencia
 	 * 
 	 */
 	
+	
 	public void aumentarSequencia() { 
 		this.sequencia = this.sequencia  + this.geradorAleatorio.nextInt(4);
-		this.apontador = this.sequencia.length() - 1;
+		this.apontador = 0;
 	}	
 	
 	/**
