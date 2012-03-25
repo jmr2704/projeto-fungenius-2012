@@ -5,7 +5,6 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import Logica.Classico;
 import Logica.Genius;
 
 /**
@@ -20,7 +19,7 @@ public class TesteGeniusClassico {
 	
 	@Before
 	public void criarGenius(){
-		geniusClassico = new Classico();
+		geniusClassico = new Genius();
 		
 	}
 	
