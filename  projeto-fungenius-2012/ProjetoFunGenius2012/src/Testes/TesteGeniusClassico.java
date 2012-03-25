@@ -38,13 +38,13 @@ public class TesteGeniusClassico {
 		Assert.assertEquals(-1, this.geniusClassico.getApontador());
 		this.geniusClassico.aumentarSequencia();
 		this.geniusClassico.aumentarSequencia();
-		Assert.assertEquals(1, this.geniusClassico.getApontador());
+		Assert.assertEquals(0, this.geniusClassico.getApontador());
 		try {
 			this.geniusClassico.verificaEntrada(this.geniusClassico.getSequencia().substring(this.geniusClassico.tamanhoSequencia() - 1));
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		Assert.assertEquals(0, this.geniusClassico.getApontador());
+		Assert.assertEquals(1, this.geniusClassico.getApontador());
 		this.geniusClassico.zerarSequencia();
 		Assert.assertEquals(-1, this.geniusClassico.getApontador());
 	}
@@ -59,19 +59,19 @@ public class TesteGeniusClassico {
 			this.geniusClassico.aumentarSequencia();
 			try {
 				Assert.assertFalse(this.geniusClassico.verificaEntrada("5"));
-				Assert.assertEquals(1, this.geniusClassico.getApontador());
+				Assert.assertEquals(0, this.geniusClassico.getApontador());
 			} catch (Exception e1) {
 				Assert.fail();
 			}
 			try {
 				this.geniusClassico.verificaEntrada(this.geniusClassico.getSequencia().substring(this.geniusClassico.tamanhoSequencia() - 1));
-				Assert.assertEquals(0, this.geniusClassico.getApontador());
+				Assert.assertEquals(1, this.geniusClassico.getApontador());
 			} catch (Exception e2) {
 				Assert.fail();				
 			}
 			try {
 				this.geniusClassico.verificaEntrada(this.geniusClassico.getSequencia().substring(this.geniusClassico.tamanhoSequencia() - 1));
-				Assert.assertEquals(-1, this.geniusClassico.getApontador());
+				Assert.assertEquals(2, this.geniusClassico.getApontador());
 			} catch (Exception e2) {
 				Assert.fail();				
 			}

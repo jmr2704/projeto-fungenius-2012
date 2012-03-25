@@ -34,15 +34,15 @@ private Genius geniusInvertido;
 		Assert.assertEquals(-1, this.geniusInvertido.getApontador());
 		this.geniusInvertido.aumentarSequencia();
 		this.geniusInvertido.aumentarSequencia();
-		Assert.assertEquals(0, this.geniusInvertido.getApontador());
+		Assert.assertEquals(1, this.geniusInvertido.getApontador());
 		try {
 			this.geniusInvertido.verificaEntrada(this.geniusInvertido.getSequencia().substring(this.geniusInvertido.tamanhoSequencia() - 1));
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		Assert.assertEquals(1, this.geniusInvertido.getApontador());
+		Assert.assertEquals(0, this.geniusInvertido.getApontador()); 
 		this.geniusInvertido.zerarSequencia();
-		Assert.assertEquals(-1, this.geniusInvertido.getApontador());
+		Assert.assertEquals(-1, this.geniusInvertido.getApontador()); 
 	}
 	
 	@Test
@@ -55,19 +55,19 @@ private Genius geniusInvertido;
 			this.geniusInvertido.aumentarSequencia();
 			try {
 				Assert.assertFalse(this.geniusInvertido.verificaEntrada("5"));
-				Assert.assertEquals(0, this.geniusInvertido.getApontador());
+				Assert.assertEquals(1, this.geniusInvertido.getApontador()); //0
 			} catch (Exception e1) {
 				Assert.fail();
 			}
 			try {
 				this.geniusInvertido.verificaEntrada(this.geniusInvertido.getSequencia().substring(this.geniusInvertido.tamanhoSequencia() - 1));
-				Assert.assertEquals(1, this.geniusInvertido.getApontador());
+				Assert.assertEquals(0, this.geniusInvertido.getApontador()); //1
 			} catch (Exception e2) {
 				Assert.fail();				
 			}
 			try {
 				this.geniusInvertido.verificaEntrada(this.geniusInvertido.getSequencia().substring(this.geniusInvertido.tamanhoSequencia() - 1));
-				Assert.assertEquals(2, this.geniusInvertido.getApontador());
+				Assert.assertEquals(-1, this.geniusInvertido.getApontador()); //2
 			} catch (Exception e2) {
 				Assert.fail();				
 			}
